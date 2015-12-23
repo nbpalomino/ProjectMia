@@ -1,0 +1,24 @@
+/* APP STYLES */
+
+.red {
+	color: #E74C3C;
+}
+.green {
+	color: #2ECC71;
+}
+.blue {
+	color: #3498DB;
+}
+.yellow {
+	color: #F1C40F;
+}
+.grey {
+	color: #95A5A6;
+}
+.navy {
+	color: #34495E;
+}
+
+#search {
+	margin-top: 2rem;
+}

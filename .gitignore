@@ -1,0 +1,9 @@
+/vendor
+/.idea
+/database/*.sqlite
+/node_modules
+/bower_components
+.env
+*.sublime-*
+sftp-*.json
+/public/packages
