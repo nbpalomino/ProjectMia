@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use MongoLite\Client as MongoClient;
+use Illuminate\Http\Response;
 
 class HomeController extends Controller {
 
@@ -17,13 +17,10 @@ class HomeController extends Controller {
 
     /**
      * Create a new controller instance.
-     *
-     * @param MongoClient $mongolite
      */
-    public function __construct(MongoClient $mongolite)
+    public function __construct()
     {
-        $this->mongolite = $mongolite;
-        $this->middleware('auth', ['except'=>['index', 'login', 'recovery', 'reset']]);
+        //$this->middleware('auth', ['except'=>['index', 'login', 'recovery', 'reset']]);
     }
 
     /**
@@ -33,17 +30,6 @@ class HomeController extends Controller {
      */
     public function index()
     {
-        // $client     = new MongoClient(base_path().'/database');
-        $database   = $this->mongolite->bugsy;
-        $collection = $database->products;
-
-        // $entry = ["name"=>"Super cool Product", "price"=>rand(10,100), "slug"=>str_slug("Supeñasdñe{{}{}123{}{qwe{}-qañañañañóaííuáua´:uüär cool Product", '-')];
-
-        // $collection->insert($entry);
-
-        $products = $collection->find(); // Get Cursor
-
-        dump($products->toArray());
         return view('home');
     }
 

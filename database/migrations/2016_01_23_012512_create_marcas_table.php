@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFieldUsers extends Migration {
+class CreateMarcasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,13 @@ class AddFieldUsers extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::create('marcas', function(Blueprint $table)
 		{
-			$table->integer('rol_id')->unsigned()->nullable();
-			$table->foreign('rol_id')->references('id')->on('roles');
+			$table->increments('id');
+			$table->string('nombre');
+
+			$table->boolean('activo')->default(1);
+			$table->timestamps();
 		});
 	}
 
@@ -26,7 +29,7 @@ class AddFieldUsers extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('marcas');
 	}
 
 }

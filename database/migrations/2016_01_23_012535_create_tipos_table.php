@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistritosTable extends Migration {
+class CreateTiposTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,13 @@ class CreateDistritosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('distritos', function(Blueprint $table)
+		Schema::create('tipos', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('nombre');
 
-			$table->integer('zona_id')->unsigned()->nullable();
-			$table->foreign('zona_id')->references('id')->on('zonas');
-
 			$table->boolean('activo')->default(1);
+			$table->timestamps();
 		});
 	}
 
@@ -31,7 +29,7 @@ class CreateDistritosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('distritos');
+		Schema::drop('tipos');
 	}
 
 }

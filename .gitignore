@@ -3,6 +3,7 @@
 /database/*.sqlite
 /node_modules
 /bower_components
+_ide_helper.php
 .env
 *.sublime-*
 sftp-*.json

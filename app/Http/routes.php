@@ -16,9 +16,6 @@ Route::get('/login', 'HomeController@login');
 Route::get('/recovery', 'HomeController@recovery');
 Route::get('/reset', 'HomeController@reset');
 
-
-Route::resource('/bugsy', 'BugController');
-
 // Route::group(['prefix'=>'api'], function($exception){
 
 //     Route::group(['middleware'=>['auth', 'cliente']], function(){

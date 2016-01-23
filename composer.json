@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-		"agentejo/mongo-lite": "dev-master"
+		"agentejo/mongo-lite": "dev-master",
+		"mathiasverraes/money": "dev-master"
 	},
 	"require-dev": {
 		"laracasts/generators" : "~1.0",

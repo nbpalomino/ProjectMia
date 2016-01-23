@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bugsy | Personal Bug Database</title>
+    <title>Mia | Fashion Site</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="Personal Bug Database">
+    <meta name="description" content="Mia Fashion Site">
     <!-- Loading Bootstrap -->
     <link rel="stylesheet" href="{{ asset('packages/flat-ui/bootstrap/css/bootstrap.min.css') }}">
     <!-- Loading Flat UI -->
@@ -20,7 +20,7 @@
         <!--   <nav class="navbar navbar-inverse navbar-embossed text-center" role="navigation"></nav> -->
         <section class="">
             <div class="jumbotron">
-                <h1>Bugsy <small class="grey">Personal Bug Database</small></h1>
+                <h1>Mia<small class="grey">Fashion Site</small></h1>
                 <div class="form-group">
                     <input type="text" v-on="keypress: doSearch enter " v-model="bug" class="form-control flat input-lg" name="search" placeholder="PHP DateTime bug">
                     <span class="input-icon fui-search animated tada"></span>

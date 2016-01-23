@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddGrupoZonas extends Migration {
+class CreateComprasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class AddGrupoZonas extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('zonas', function(Blueprint $table)
+		Schema::create('compras', function(Blueprint $table)
 		{
-			$table->integer('grupo_id')->unsigned();
-			$table->foreign('grupo_id')->references('id')->on('grupos');
+			$table->increments('id');
+			$table->timestamps();
 		});
 	}
 
@@ -26,7 +26,7 @@ class AddGrupoZonas extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('compras');
 	}
 
 }
