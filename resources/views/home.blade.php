@@ -27,10 +27,15 @@
                 </div>
                 <a href="#" class="btn btn-success btn-embossed btn-lg"><i class="fui-plus "></i> Agregar bug</a>
             </div>
-            <div class="row-fluid">
+            <div class="row">
                 <div class="col-sm-offset-3 col-sm-6 well well-sm">
                     <p>@{{ bug }}</p>
                 </div>
+            </div>
+            <div class="row">
+                @foreach($categorias as $category)
+                    <p>{{$category->nombre}}</p>
+                @endforeach
             </div>
         </section>
     </div>

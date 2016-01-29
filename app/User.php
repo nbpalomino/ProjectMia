@@ -13,14 +13,14 @@ use App\Services\ModelQueries;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
-	use ComprobadorRoles;
+	//use ComprobadorRoles;
 
 	/**
 	 * Consultas encapsuladas
 	 *
 	 * Actualiza los campos de Auditoria
 	 */
-	use ModelQueries, Auditorias;
+	//use ModelQueries, Auditorias;
 
 	/**
 	 * The database table used by the model.

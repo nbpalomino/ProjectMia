@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Response;
 
 class HomeController extends Controller {
@@ -30,7 +31,9 @@ class HomeController extends Controller {
      */
     public function index()
     {
-        return view('home');
+        $data['categorias'] = Category::all();
+
+        return view('home')->with($data);
     }
 
     /**

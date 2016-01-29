@@ -6,4 +6,5 @@ interface IRepository {
     public function delete($id);
     public function findById($id);
     public function lists();
+    public function findAll();
 }

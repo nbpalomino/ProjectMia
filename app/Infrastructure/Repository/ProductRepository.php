@@ -1,12 +1,17 @@
-<?php namespace Infrastructure\Repository;
+<?php namespace App\Infrastructure\Repository;
 
-use App\Domain\Repository\Interfaces\ICustomerRepository;
+use App\Domain\Repository\Interfaces\IProductRepository;
 
-class CustomerRepository implements ICustomerRepository{
+class ProductRepository implements IProductRepository {
 
-    public function getEnabled($pageIndex, $pageCount)
+    public function getAvailable()
     {
-        // TODO: Implement getEnabled() method.
+        // TODO: Implement getAvailable() method.
+    }
+
+    public function getByBrand($brand)
+    {
+        // TODO: Implement getByBrand() method.
     }
 
     public function create($entity)
