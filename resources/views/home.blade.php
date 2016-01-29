@@ -20,12 +20,12 @@
         <!--   <nav class="navbar navbar-inverse navbar-embossed text-center" role="navigation"></nav> -->
         <section class="">
             <div class="jumbotron">
-                <h1>Mia<small class="grey">Fashion Site</small></h1>
+                <h1>Mia<br><small class="grey">Fashion Site</small></h1>
                 <div class="form-group">
-                    <input type="text" v-on="keypress: doSearch enter " v-model="bug" class="form-control flat input-lg" name="search" placeholder="PHP DateTime bug">
+                    <input type="text" v-on="keypress: doSearch enter " v-model="bug" class="form-control flat input-lg" name="search" placeholder="Botas de cuero marrones">
                     <span class="input-icon fui-search animated tada"></span>
                 </div>
-                <a href="#" class="btn btn-success btn-embossed btn-lg"><i class="fui-plus "></i> Agregar bug</a>
+                <a href="#" class="btn btn-success btn-embossed btn-lg"><i class="fui-plus "></i>Buscar productos</a>
             </div>
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6 well well-sm">
@@ -33,8 +33,28 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($categorias as $category)
-                    <p>{{$category->nombre}}</p>
+                @foreach($products as $p)
+                    <div class="col-md-3">
+                        <!--<i class="fui-photo"></i>-->
+                        <span>
+                            <strong>{{$p->nombre}}</strong>
+                            <br>
+                            <small><em>{{ $p->tipo->nombre }}</em> {{$p->marca->nombre}}</small>
+                        </span>
+                        <br>
+                        <span>S/. {{$p->precio}}</span>
+                        <div>
+                            <img class="img-responsive img-rounded" src="https://placeimg.com/300/350/people" alt="People"/>
+                        </div>
+                        <span class="tags">
+                            <span class="label label-default">{{$p->marca->nombre}}</span>
+                            <span class="label label-default">{{$p->genero->nombre}}</span>
+                            <span class="label label-default">{{$p->tipo->nombre}}</span>
+                        </span>
+                        <p class="">
+                            <a class="btn btn-success btn-embossed" href="#">Comprar <i class="fui-check-inverted-2"></i></a>
+                        </p>
+                    </div>
                 @endforeach
             </div>
         </section>

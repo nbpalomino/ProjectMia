@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Category;
+use App\Domain\Repository\Interfaces\IProductRepository;
+use App\Product;
 use Illuminate\Http\Response;
 
 class HomeController extends Controller {
@@ -18,9 +20,11 @@ class HomeController extends Controller {
 
     /**
      * Create a new controller instance.
+     * @param IProductRepository $repo
      */
-    public function __construct()
+    public function __construct(IProductRepository $repo)
     {
+        $this->repo = $repo;
         //$this->middleware('auth', ['except'=>['index', 'login', 'recovery', 'reset']]);
     }
 
@@ -31,7 +35,7 @@ class HomeController extends Controller {
      */
     public function index()
     {
-        $data['categorias'] = Category::all();
+        $data['products'] = $this->repo->findAll();
 
         return view('home')->with($data);
     }

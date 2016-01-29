@@ -11,6 +11,9 @@
 |
 */
 
+App::bind('App\Domain\Repository\Interfaces\IProductRepository',
+    'App\Infrastructure\Repository\Eloquent\ProductRepository');
+
 Route::get('/', 'HomeController@index');
 Route::get('/login', 'HomeController@login');
 Route::get('/recovery', 'HomeController@recovery');
